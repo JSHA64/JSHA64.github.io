@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <header class="principal-ca">
+        <img class="imagen-logo" src="./img/logo.svg" alt="logo">
+    </header>
+    <main class="principal">
+        <section class="seccion-principal">
+            <textarea onclick="limpiarTexto()" class="input" name="input" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+            <p class="anuncio">Solo letras minúsculas y sin acentos</p>
+            <img class="img-exclamacion" src="./img/exclamation.png" alt="exclamation">
+            <button type="button" class="boton-a" onclick="uiEncript()">Encriptar</button>
+            <button type="button" class="boton-b" onclick="uiDecript()">Desencriptar</button>
+        </section>
+        <section class="seccion-secundaria">
+            <div class="div-segundasecc">
+                <p class="texto-encriptado"></p>
+                <img class="img-muneco" src="./img/muñeco.png" alt="">
+                <h2 class="anuncio-mun-1">Ningún mensaje fue encontrado</h2>
+                <p class="anuncio-muneco">Ingresa el texto que desea encriptar o desencriptar.</p>
+                <button class="boton-copiar" type="button" onclick="uiCopy()">Copiar</button>
+            </div>
+        </section>
+    </main>
+    <script src="/function.js"></script>
+</body>
+</html>
