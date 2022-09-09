@@ -2,13 +2,13 @@
     font-family: 'Inter';
     src: url(/fonts/Inter-Light.ttf);
     font-style: normal;
+    font-display: block;
 }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Inter';
-    font-display: block;
 }
 html {
     background-color: #E5E5E5;
