@@ -12,6 +12,7 @@
 }
 html {
     background-color: #E5E5E5;
+    font-family: 'Inter';
 }
 .principal-ca, .imagen-logo {
     position: sticky;
