@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'Inter';
     src: url(/fonts/Inter-Light.ttf);
-    font-style: normal;
-    font-display: block;
 }
 * {
     box-sizing: border-box;
@@ -12,7 +10,6 @@
 }
 html {
     background-color: #E5E5E5;
-    font-family: 'Inter';
 }
 .principal-ca, .imagen-logo {
     position: sticky;
