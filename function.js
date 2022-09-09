@@ -1,32 +1,23 @@
-(function() {
+    window.uiEncript = uiEncript
+    window.uiDecript = uiDecript
+    window.uiCopy = uiCopy
+    window.oninput = uiSoloLetras
+
     const textarea = document.querySelector('.input')
     const aparecer = document.querySelector('.boton-copiar')
     const des = document.querySelector('.img-muneco')
     const destwo = document.querySelector('.anuncio-mun-1')
     const destree = document.querySelector('.anuncio-muneco')
 
-    var salida
     function crearSalida() {
       const sali = document.querySelector('.texto-encriptado')
       const child = document.createTextNode('')
-  
-      sali.innerHTML = '' 
       sali.appendChild(child) 
       salida = child
     }
     crearSalida()
-
-    function limpiarTexto() {
-      textarea.value = "";
-  }
-  limpiarTexto()
-
     
-    window.uiEncript = uiEncript
-    window.uiDecript = uiDecript
-    window.uiCopy = uiCopy
-    window.oninput = uiSoloLetras
-
+    
     function KeyEncryption(x) {
       switch(x) {
       case 'e': return 'enter'
@@ -149,10 +140,9 @@
     const kClipboard = navigator.clipboard
     function uiCopy() {
       if (kClipboard) {
-        kClipboard.writeText(salida.nodeValue).then(function() {
+        kClipboard.writeText(salida.nodeValue).then(() => {
           alert('copiado')
         })  
       }
       
     }
-    }())
