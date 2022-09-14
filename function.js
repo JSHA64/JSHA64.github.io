@@ -4,15 +4,13 @@
     window.oninput = uiSoloLetras
 
     const textarea = document.querySelector('.input')
+    const des = document.getElementsByClassName('img-td')
+    const sali = document.querySelector('.texto-encriptado')
     const aparecer = document.querySelector('.boton-copiar')
-    const des = document.querySelector('.img-muneco')
-    const destwo = document.querySelector('.anuncio-mun-1')
-    const destree = document.querySelector('.anuncio-muneco')
-
+    
     function crearSalida() {
-      const sali = document.querySelector('.texto-encriptado')
       const child = document.createTextNode('')
-      sali.appendChild(child) 
+      sali.appendChild(child)
       salida = child
     }
     crearSalida()
@@ -74,18 +72,18 @@
     
     function mostrarRdivs() {
       aparecer.style.visibility = 'visible'
-      des.style.visibility = 'hidden'
-      destwo.style.visibility = 'hidden'
-      destree.style.visibility = 'hidden'
+      des[0].style.visibility = 'hidden'
+      des[1].style.visibility = 'hidden'
+      des[2].style.visibility = 'hidden'
     }
     function ocultarRdivs2() {
       aparecer.style.visibility = 'hidden'
-      des.style.visibility = 'visible'
-      destwo.style.visibility = 'visible'
-      destree.style.visibility = 'visible'
+      des[0].style.visibility = 'visible'
+      des[1].style.visibility = 'visible'
+      des[2].style.visibility = 'visible'
     }
     
-    const kUnAllowed = /[^a-z ]/g
+    const kUnAllowed = /[^a-z]/g
     function uiSoloLetras(ev) {
       const { inputType, target, data } = ev
       // caso más frecuente
