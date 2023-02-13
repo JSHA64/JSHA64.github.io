@@ -3,7 +3,6 @@
     window.uiCopy = uiCopy
     window.oninput = uiSoloLetras
 
-    const contenedorprincipal = document.querySelector('seccion-principal')
     const textarea = document.querySelector('.input')
     const tdimg = document.getElementsByClassName('img-td')
     const salidaencriptada = document.querySelector('.texto-encriptado')
