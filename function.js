@@ -3,14 +3,17 @@
     window.uiCopy = uiCopy
     window.oninput = uiSoloLetras
 
+    const contenedorprincipal = document.querySelector('seccion-principal')
     const textarea = document.querySelector('.input')
-    const des = document.getElementsByClassName('img-td')
-    const sali = document.querySelector('.texto-encriptado')
-    const aparecer = document.querySelector('.boton-copiar')
+    const tdimg = document.getElementsByClassName('img-td')
+    const salidaencriptada = document.querySelector('.texto-encriptado')
+    const btncopy = document.querySelector('.boton-copiar')
+    const btnencript = document.querySelector('.boton-a')
+    const btndecript = document.querySelector('.boton-b')
     
     function crearSalida() {
       const child = document.createTextNode('')
-      sali.appendChild(child)
+      salidaencriptada.appendChild(child)
       salida = child
     }
     crearSalida()
@@ -71,17 +74,21 @@
     }
     
     function mostrarRdivs() {
-      aparecer.style.visibility = 'visible'
-      des[0].style.visibility = 'hidden'
-      des[1].style.visibility = 'hidden'
-      des[2].style.visibility = 'hidden'
+      btncopy.style.visibility = 'visible'
+      tdimg[0].style.visibility = 'hidden'
+      tdimg[1].style.visibility = 'hidden'
+      tdimg[2].style.visibility = 'hidden'
     }
     function ocultarRdivs2() {
-      aparecer.style.visibility = 'hidden'
-      des[0].style.visibility = 'visible'
-      des[1].style.visibility = 'visible'
-      des[2].style.visibility = 'visible'
+      btncopy.style.visibility = 'hidden'
+      tdimg[0].style.visibility = 'visible'
+      tdimg[1].style.visibility = 'visible'
+      tdimg[2].style.visibility = 'visible'
     }
+    
+    
+    
+    
     
     const kUnAllowed = /[^a-z]/g
     function uiSoloLetras(ev) {
@@ -91,8 +98,8 @@
         kUnAllowed.lastIndex = 0
         if (kUnAllowed.test(data)) {
           let value = target.value
-          target.value = value.substring(0, value.length - 1)
-          alert('solo letras minúsculas y sin acentos')
+          target.value = value.substring(0, value.length - 1);
+          alert('Solo letras minúsculas y sin acentos')
         }
       } else if(inputType === 'insertFromPaste') {
         let value = data || target.value || ''
@@ -103,7 +110,9 @@
         }
       }
     }
-    
+
+    btndecript.addEventListener('click', uiDecript);
+
     function uiDecript() {
       var txt = textarea.value
       textarea.value = ''
@@ -120,6 +129,8 @@
       }
     
     }
+
+    btnencript.addEventListener('click', uiEncript);
     
     function uiEncript() {
       var txt = textarea.value
@@ -134,6 +145,8 @@
       }
       
     }
+
+    btncopy.addEventListener('click', uiCopy)
 
     const kClipboard = navigator.clipboard
     function uiCopy() {
