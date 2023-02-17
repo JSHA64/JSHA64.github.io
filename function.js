@@ -6,9 +6,12 @@
     const textarea = document.querySelector('.input')
     const tdimg = document.getElementsByClassName('img-td')
     const salidaencriptada = document.querySelector('.texto-encriptado')
-    const btncopy = document.querySelector('.boton-copiar')
-    const btnencript = document.querySelector('.boton-a')
-    const btndecript = document.querySelector('.boton-b')
+    const btncopy = document.querySelector('.btn-copy')
+    
+    function selecyEvent(etiqueta, funcion) {
+      const seleccionarelementos = document.querySelector(etiqueta)
+      seleccionarelementos.addEventListener('click', funcion)
+    }
     
     function crearSalida() {
       const child = document.createTextNode('')
@@ -16,7 +19,6 @@
       salida = child
     }
     crearSalida()
-    
     
     function KeyEncryption(x) {
       switch(x) {
@@ -85,10 +87,6 @@
       tdimg[2].style.visibility = 'visible'
     }
     
-    
-    
-    
-    
     const kUnAllowed = /[^a-z]/g
     function uiSoloLetras(ev) {
       const { inputType, target, data } = ev
@@ -110,7 +108,7 @@
       }
     }
 
-    btndecript.addEventListener('click', uiDecript);
+    selecyEvent('.boton-b', uiDecript)
 
     function uiDecript() {
       var txt = textarea.value
@@ -129,7 +127,7 @@
     
     }
 
-    btnencript.addEventListener('click', uiEncript);
+    selecyEvent('.boton-a', uiEncript)
     
     function uiEncript() {
       var txt = textarea.value
@@ -145,7 +143,7 @@
       
     }
 
-    btncopy.addEventListener('click', uiCopy)
+    selecyEvent('.boton-copiar', uiCopy)
 
     const kClipboard = navigator.clipboard
     function uiCopy() {
