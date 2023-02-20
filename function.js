@@ -4,7 +4,7 @@
     window.oninput = uiSoloLetras
 
     const textarea = document.querySelector('.input')
-    const tdimg = document.getElementsByClassName('img-td')
+    const desaparecealgo = document.querySelector('.eliminar')
     const salidaencriptada = document.querySelector('.texto-encriptado')
     const btncopy = document.querySelector('.btn-copy')
     
@@ -74,17 +74,14 @@
       return r
     }
     
-    function mostrarRdivs() {
-      btncopy.style.visibility = 'visible'
-      tdimg[0].style.visibility = 'hidden'
-      tdimg[1].style.visibility = 'hidden'
-      tdimg[2].style.visibility = 'hidden'
-    }
-    function ocultarRdivs2() {
-      btncopy.style.visibility = 'hidden'
-      tdimg[0].style.visibility = 'visible'
-      tdimg[1].style.visibility = 'visible'
-      tdimg[2].style.visibility = 'visible'
+    function mostrarYOcultarRdivs() {
+      if (desaparecealgo) {
+        btncopy.classList.add('active')
+        desaparecealgo.classList.add('inactive')
+      } else {
+        btncopy.classList.remove('active')
+        desaparecealgo.classList.remove('inactive')
+      }
     }
     
     const kUnAllowed = /[^a-z]/g
@@ -115,14 +112,14 @@
       textarea.value = ''
       if (txt.length === 0) {
         salida.nodeValue = ''
-        ocultarRdivs2()
+        mostrarYOcultarRdivs()
       } else {
         try {
           salida.nodeValue = decript(txt)
         } catch(error) {
           salida.nodeValue = 'Error: no se pudo decodificar la cadena, porque no es una codificación válida'
         }
-        mostrarRdivs()
+        mostrarYOcultarRdivs()
       }
     
     }
@@ -134,11 +131,11 @@
       textarea.value = ''
       if (txt.length === 0) {
         salida.nodeValue = ''
-        ocultarRdivs2()
+        mostrarYOcultarRdivs()
         
       } else {
         salida.nodeValue = encript(txt)
-        mostrarRdivs()
+        mostrarYOcultarRdivs()
       }
       
     }

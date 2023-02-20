@@ -112,7 +112,9 @@ html {
 .anuncio-muneco {
     font-size: 1rem;
 }
+/* Boton para copiar */
 .boton-copiar {
+    visibility: hidden;
     border: 0.063rem solid #0A3871;
     background-color: #FFFFFF;
     border-radius: 1.2rem;
@@ -122,7 +124,6 @@ html {
     height: 3.3rem;
     top: 2rem;
     left: 3.5rem;
-    visibility: hidden;
 }
 .boton-copiar:hover {
     transition: all 0.3s ease 0s;
@@ -135,4 +136,11 @@ html {
     box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(1px);
+}
+/* Activar y desactivar contenedor */
+.inactive {
+    visibility: hidden;
+}
+.active {
+    visibility: visible;
 }
